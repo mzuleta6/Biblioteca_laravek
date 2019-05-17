@@ -14,11 +14,11 @@ class CreateLibroPrestamoTable extends Migration
     public function up()
     {
         Schema::create('libro_prestamo', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->unsignedInteger('usuario_id');
-            $table->foreign('usuario_id','fk_prestamolibro_usuario')->references('id')->on('usuario')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('usuario_id','fk_libro_prestamo_usuario')->references('id')->on('usuario')->onDelete('restrict')->onUpdate('restrict');
             $table->unsignedInteger('libro_id');
-            $table->foreign('libro_id','fk_prestamolibro_libro')->references('id')->on('libro')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('libro_id','fk_libro_prestamo_libro')->references('id')->on('libro')->onDelete('restrict')->onUpdate('restrict');
             $table->date('fecha_prestamo');
             $table->string('prestado_a',100);
             $table->boolean('estado');
