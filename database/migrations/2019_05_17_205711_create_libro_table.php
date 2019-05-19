@@ -15,7 +15,7 @@ class CreateLibroTable extends Migration
     {
         Schema::create('libro', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('prestamos',100);
+            $table->string('titulo',100);
             $table->string('isbn',30);
             $table->string('autor',100);
             $table->unsignedTinyInteger('cantidad');
