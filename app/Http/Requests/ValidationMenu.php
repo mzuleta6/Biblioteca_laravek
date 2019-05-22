@@ -35,7 +35,6 @@ class ValidationMenu extends FormRequest
     {
         return [
             'nombre.required' => 'El campo nombre es requerido',
-            'url.required' => 'El campo url es requerido'
         ];
     }
 }
